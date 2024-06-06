@@ -6,6 +6,9 @@ frontend:
     preBuild:
       commands:
         - npm install
+        - npm install --save-dev cypress
+        - cypress verify
+        - echo "$CI_PROJECT_DIR/cache/Cypress"
         - echo "From Repo"
     build:
       commands:
@@ -17,6 +20,8 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
+      - /root/.cache/Cypress/**/*
+      - cache/Cypress/**/*
 test:
   artifacts:
     baseDirectory: cypress
