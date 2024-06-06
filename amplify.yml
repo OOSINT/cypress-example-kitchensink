@@ -9,6 +9,7 @@ applications:
         preBuild:
           commands:
             - npm install
+            - cypress install
             - echo "From Repo"
         build:
           commands:
@@ -20,7 +21,6 @@ applications:
       cache:
         paths:
           - node_modules/**/*
-          - /root/.cache/Cypress/13.11.0/Cypress/Cypress
           - /root/.cache/Cypress/**/*
           - ~/.cache
     test:
@@ -33,7 +33,6 @@ applications:
       cache:
         paths:
           - node_modules/**/*
-          - /root/.cache/Cypress/13.11.0/Cypress/Cypress
           - /root/.cache/Cypress/**/*
           - ~/.cache
       phases:
