@@ -1,44 +1,84 @@
 version: 0.1
-frontend:
-  phases:
-    preBuild:
-      commands:
-        - npm install
-        - echo "From Repo"
-    build:
-      commands:
-        - npm run build
-  artifacts:
-    baseDirectory: app
-    files:
-      - "**/*"
-  cache:
-    paths:
-      -  node_modules/**/*
-      - /root/.cache/Cypress/**/*
-      - ~/.cache
-test:
-  artifacts:
-    baseDirectory: cypress
-    configFilePath: "**/mochawesome.json"
-    files:
-      - "**/*.png"
-      - "**/*.mp4"
-  cache:
-    paths:
-      -  node_modules/**/*
-      - /root/.cache/Cypress/**/*
-      - ~/.cache
-  phases:
-    preTest:
-      commands:
-        - npm install
-        - npm install wait-on
-        - npm install mocha mochawesome mochawesome-merge mochawesome-report-generator
-        - "npm start & npx wait-on http://127.0.0.1:8080"
+applications:
+  - appRoot: app
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm install
+            - cypress install
+            - echo "From Repo"
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        baseDirectory: app
+        files:
+          - "**/*"
+      cache:
+        paths:
+          - ~/.cache
     test:
-      commands:
-        - 'npx cypress run --reporter mochawesome --reporter-options "reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss"'
-    postTest:
-      commands:
-        - npx mochawesome-merge@4 cypress/report/mochawesome-report/*.json > cypress/report/mochawesome.json
+      artifacts:
+        baseDirectory: cypress
+        configFilePath: "**/mochawesome.json"
+        files:
+          - "**/*.png"
+          - "**/*.mp4"
+      cache:
+        paths:
+          - ~/.cache
+      phases:
+        preTest:
+          commands:
+            - npm install
+            - npm install wait-on
+            - npm install mocha mochawesome mochawesome-merge mochawesome-report-generator
+            - "npm start & npx wait-on http://127.0.0.1:8080"
+        test:
+          commands:
+            - 'npx cypress run --reporter mochawesome --reporter-options "reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss"'
+        postTest:
+          commands:
+            - npx mochawesome-merge@4 cypress/report/mochawesome-report/*.json > cypress/report/mochawesome.json
+  - appRoot: app2
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm install
+            - cypress install
+            - echo "From Repo"
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        baseDirectory: app
+        files:
+          - "**/*"
+      cache:
+        paths:
+          - ~/.cache
+    test:
+      artifacts:
+        baseDirectory: cypress
+        configFilePath: "**/mochawesome.json"
+        files:
+          - "**/*.png"
+          - "**/*.mp4"
+      cache:
+        paths:
+          - ~/.cache
+      phases:
+        preTest:
+          commands:
+            - npm install
+            - npm install wait-on
+            - npm install mocha mochawesome mochawesome-merge mochawesome-report-generator
+            - "npm start & npx wait-on http://127.0.0.1:8080"
+        test:
+          commands:
+            - 'npx cypress run --reporter mochawesome --reporter-options "reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss"'
+        postTest:
+          commands:
+            - npx mochawesome-merge@4 cypress/report/mochawesome-report/*.json > cypress/report/mochawesome.json
