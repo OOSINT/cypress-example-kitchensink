@@ -12,7 +12,7 @@ applications:
           commands:
             - npm run build
       artifacts:
-        baseDirectory: app
+        baseDirectory: ./app
         files:
           - "**/*"
       cache:
@@ -41,7 +41,7 @@ applications:
         postTest:
           commands:
             - npx mochawesome-merge@4 cypress/report/mochawesome-report/*.json > cypress/report/mochawesome.json            
-  - appRoot: app2
+  - appRoot: ./app2
     frontend:
       phases:
         preBuild:
