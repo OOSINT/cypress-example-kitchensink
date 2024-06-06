@@ -5,7 +5,7 @@ applications:
       phases:
         preBuild:
           commands:
-            - npm uninstall
+            - rm -rf node_modules && rm -rf package-lock.json
             - npm install
             - cypress verify
             - echo "From Repo"
