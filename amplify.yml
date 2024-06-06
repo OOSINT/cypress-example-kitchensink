@@ -1,7 +1,4 @@
 version: 0.2
-variables:
-  npm_config_cache: /root/.npm
-  CYPRESS_CACHE_FOLDER: /root/.cache/Cypress
 applications:
   - appRoot: app
     frontend:
