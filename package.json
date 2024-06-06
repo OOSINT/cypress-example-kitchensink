@@ -33,6 +33,7 @@
     "test:ci:record:firefox": "run-p --race start e2e:record:firefox",
     "test:ci:record:parallel": "run-p --race start e2e:record:parallel",
     "cy:verify": "cypress verify",
+    "cy:path": "cypress verify",
     "cy:info": "cypress info",
     "cy:version": "cypress version",
     "cy:cache:list": "cypress cache list",
