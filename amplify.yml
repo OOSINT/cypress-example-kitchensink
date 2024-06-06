@@ -7,6 +7,7 @@ frontend:
       commands:
         - npm install
         - npm install --save-dev cypress
+        - cypress install
         - cypress verify
         - echo "$CI_PROJECT_DIR/cache/Cypress"
         - echo "From Repo"
@@ -21,7 +22,7 @@ frontend:
     paths:
       - node_modules/**/*
       - /root/.cache/Cypress/**/*
-      - cache/Cypress/**/*
+      - cache/**/*
 test:
   artifacts:
     baseDirectory: cypress
@@ -35,6 +36,10 @@ test:
         - npm install
         - npm install wait-on
         - npm install mocha mochawesome mochawesome-merge mochawesome-report-generator
+        - npm install --save-dev cypress
+        - cypress install
+        - cypress verify
+        - echo "$CI_PROJECT_DIR/cache/Cypress"
         - "npm start & npx wait-on http://127.0.0.1:8080"
     test:
       commands:
