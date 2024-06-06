@@ -13,7 +13,9 @@ frontend:
       - "**/*"
   cache:
     paths:
-      - node_modules/**/*
+      - node_modules/**/*,            
+      - /root/.cache/Cypress/**/*
+      - ~/.cache
 test:
   artifacts:
     baseDirectory: cypress
