@@ -5,6 +5,7 @@
   "main": "index.js",
   "files": [
     "app",
+    "app2",
     "cypress"
   ],
   "scripts": {
