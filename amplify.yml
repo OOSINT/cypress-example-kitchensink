@@ -1,7 +1,7 @@
 version: 0.2
 variables:
-  npm_config_cache: $CI_PROJECT_DIR/.npm
-  CYPRESS_CACHE_FOLDER: $CI_PROJECT_DIR/.cache/Cypress
+  npm_config_cache: /root/.npm
+  CYPRESS_CACHE_FOLDER: /root/.cache/Cypress
 applications:
   - appRoot: app
     frontend:
@@ -9,8 +9,6 @@ applications:
         preBuild:
           commands:
             - npm install
-            - cypress verify
-            - echo $CI_PROJECT_DIR/.cache/Cypress
             - echo "From Repo"
         build:
           commands:
