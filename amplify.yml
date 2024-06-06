@@ -1,15 +1,9 @@
 version: 0.1
-variables:
-  CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
 frontend:
   phases:
     preBuild:
       commands:
         - npm install
-        - npm install --save-dev cypress
-        - cypress install
-        - cypress verify
-        - echo "$CI_PROJECT_DIR"
         - echo "From Repo"
     build:
       commands:
@@ -20,9 +14,7 @@ frontend:
       - "**/*"
   cache:
     paths:
-      - node_modules/**/*
-      - /root/.cache/Cypress/
-      - cache/**/*
+      - ~/.cache
 test:
   artifacts:
     baseDirectory: cypress
