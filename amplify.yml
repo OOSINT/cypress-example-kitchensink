@@ -6,8 +6,7 @@ applications:
         preBuild:
           commands:
             - npm install
-            - npm install -g cypress
-            - cypress install
+            - npm install --save-dev cypress            
             - npm cypress cache path
             - npm cypress cache list
             - npm print-env CI
@@ -52,7 +51,6 @@ applications:
         preBuild:
           commands:
             - npm install
-            - cypress install
             - echo "From Repo"
         build:
           commands:
