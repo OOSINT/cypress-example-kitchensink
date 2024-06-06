@@ -5,8 +5,12 @@ applications:
       phases:
         preBuild:
           commands:
-            - npm install
+            - npx install
             - cypress install
+            - npx cypress cache path
+            - npx cypress cache list
+            - npx print-env CI
+            - npm run cy:verify
             - echo "From Repo"
         build:
           commands:
@@ -20,7 +24,7 @@ applications:
           - ~/.cache
     test:
       artifacts:
-        baseDirectory: .cypress
+        baseDirectory: ./app/cypress
         configFilePath: "**/mochawesome.json"
         files:
           - "**/*.png"
