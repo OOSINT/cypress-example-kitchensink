@@ -9,7 +9,6 @@ applications:
             - npm install --save-dev cypress            
             - npm run cy:info
             - npm run cy:cache:list
-            - npm print-env CI
             - npm run cy:verify
             - echo "From Repo"
         build:
