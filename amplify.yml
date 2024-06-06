@@ -6,6 +6,8 @@ applications:
         preBuild:
           commands:
             - npm install
+            - npm install --save-dev cypress
+            - cypress verify
             - echo "From Repo"
         build:
           commands:
@@ -16,7 +18,7 @@ applications:
           - "**/*"
       cache:
         paths:
-          -  node_modules/**/*
+          - node_modules/**/*
           - /root/.cache/Cypress/**/*
           - ~/.cache
     test:
@@ -28,7 +30,7 @@ applications:
           - "**/*.mp4"
       cache:
         paths:
-          -  node_modules/**/*
+          - node_modules/**/*
           - /root/.cache/Cypress/**/*
           - ~/.cache
       phases:
