@@ -6,7 +6,8 @@ applications:
         preBuild:
           commands:
             - npm install
-            - npm install --save-dev cypress            
+            - npm install --save-dev cypress
+            - npm run cy:path
             - npm run cy:info
             - npm run cy:cache:list
             - npm run cy:verify
