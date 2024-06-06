@@ -9,7 +9,7 @@ frontend:
         - npm install --save-dev cypress
         - cypress install
         - cypress verify
-        - echo "$CI_PROJECT_DIR/cache/Cypress"
+        - echo "$CI_PROJECT_DIR"
         - echo "From Repo"
     build:
       commands:
@@ -39,7 +39,7 @@ test:
         - npm install --save-dev cypress
         - cypress install
         - cypress verify
-        - echo "$CI_PROJECT_DIR/cache/Cypress"
+        - echo "$CI_PROJECT_DIR"
         - "npm start & npx wait-on http://127.0.0.1:8080"
     test:
       commands:
