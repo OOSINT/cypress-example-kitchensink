@@ -6,6 +6,7 @@ applications:
         preBuild:
           commands:
             - npm install
+            - npm install -g cypress
             - cypress install
             - npm cypress cache path
             - npm cypress cache list
