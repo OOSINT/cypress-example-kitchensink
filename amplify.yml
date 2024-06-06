@@ -3,7 +3,8 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm install           
+        - npm install
+        - cypress install
         - ls /root/.cache/Cypress/**/* | wc -l
         - ls ~/.cache | wc -l
     build:
