@@ -19,6 +19,7 @@ frontend:
       - node_modules/**/*
       - /root/.cache/Cypress/**/Cypress/*
       - /root/.cache/Cypress/**/*
+      - ~/.cache/Cypress
       - ~/.cache
 test:
   artifacts:
