@@ -21,7 +21,7 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
-      - /root/.cache/Cypress/**/*
+      - /root/.cache/Cypress/
       - cache/**/*
 test:
   artifacts:
@@ -36,10 +36,6 @@ test:
         - npm install
         - npm install wait-on
         - npm install mocha mochawesome mochawesome-merge mochawesome-report-generator
-        - npm install --save-dev cypress
-        - cypress install
-        - cypress verify
-        - echo "$CI_PROJECT_DIR"
         - "npm start & npx wait-on http://127.0.0.1:8080"
     test:
       commands:
