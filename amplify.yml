@@ -17,6 +17,8 @@ applications:
           - "**/*"
       cache:
         paths:
+          - node_modules/**/*
+          - /root/.cache/Cypress
           - ~/.cache
     test:
       artifacts:
@@ -27,6 +29,8 @@ applications:
           - "**/*.mp4"
       cache:
         paths:
+          - node_modules/**/*
+          - /root/.cache/Cypress
           - ~/.cache
       phases:
         preTest:
