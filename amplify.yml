@@ -5,6 +5,7 @@ frontend:
       commands:
         - npm install
         - cypress install
+        - npm install --save-dev cypress
         - ls /root/.cache/Cypress/**/* | wc -l
         - ls ~/.cache | wc -l
         - echo "From Repo"
@@ -18,9 +19,7 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
-      - /root/.cache/Cypress/**/Cypress/*
       - /root/.cache/Cypress/**/*
-      - ~/.cache/Cypress
       - ~/.cache
 test:
   artifacts:
