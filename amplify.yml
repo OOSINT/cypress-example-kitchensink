@@ -5,8 +5,8 @@ applications:
       phases:
         preBuild:
           commands:
+            - npm uninstall
             - npm install
-            - npm install --save-dev cypress
             - cypress verify
             - echo "From Repo"
         build:
