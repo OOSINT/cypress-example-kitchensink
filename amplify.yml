@@ -5,11 +5,11 @@ applications:
       phases:
         preBuild:
           commands:
-            - npx install
+            - npm install
             - cypress install
-            - npx cypress cache path
-            - npx cypress cache list
-            - npx print-env CI
+            - npm cypress cache path
+            - npm cypress cache list
+            - npm print-env CI
             - npm run cy:verify
             - echo "From Repo"
         build:
