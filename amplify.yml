@@ -36,6 +36,7 @@ applications:
       phases:
         preTest:
           commands:
+            - pwd
             - npm install
             - npm run cy:install
             - npm install wait-on
