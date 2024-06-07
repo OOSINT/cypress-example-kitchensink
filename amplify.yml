@@ -25,7 +25,7 @@ applications:
           - ~/.cache
     test:
       artifacts:
-        baseDirectory: .cypress
+        baseDirectory: ../cypress
         configFilePath: "**/mochawesome.json"
         files:
           - "**/*.png"
@@ -66,7 +66,7 @@ applications:
           - ~/.cache
     test:
       artifacts:
-        baseDirectory: .cypress
+        baseDirectory: ../cypress
         configFilePath: "**/mochawesome.json"
         files:
           - "**/*.png"
@@ -77,6 +77,7 @@ applications:
       phases:
         preTest:
           commands:
+            - pwd
             - npm install
             - npm install wait-on
             - npm install mocha mochawesome mochawesome-merge mochawesome-report-generator
