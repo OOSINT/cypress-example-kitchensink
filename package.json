@@ -32,6 +32,7 @@
     "test:ci:record:edge": "run-p --race start e2e:record:edge",
     "test:ci:record:firefox": "run-p --race start e2e:record:firefox",
     "test:ci:record:parallel": "run-p --race start e2e:record:parallel",
+    "cy:install": "cypress install",
     "cy:verify": "cypress verify",
     "cy:path": "cypress verify",
     "cy:info": "cypress info",
