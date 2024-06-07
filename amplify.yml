@@ -25,7 +25,7 @@ applications:
           - ~/.cache
     test:
       artifacts:
-        baseDirectory: ../cypress
+        baseDirectory: .cypress
         configFilePath: "**/mochawesome.json"
         files:
           - "**/*.png"
