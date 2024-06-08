@@ -1,6 +1,6 @@
 version: 0.1
 applications:
-  - appRoot: app
+  - appRoot: app1
     frontend:
       phases:
         preBuild:
@@ -12,7 +12,8 @@ applications:
             - npm run cy:cache:list
             - npm run cy:verify
             - pwd
-            - echo "From Repo"
+            - ls
+            - echo "From App 1"
         build:
           commands:
             - npm run build
