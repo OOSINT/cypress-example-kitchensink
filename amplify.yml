@@ -46,10 +46,10 @@ applications:
         test:
           commands:
             - ls
-            - 'npx cypress run --reporter mochawesome --config-file=../cypress.config.js --reporter-options "reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss"'
+            - 'npx cypress run --reporter mochawesome --config-file=../cypress.config.js --reporter-options "reportDir=../cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss"'
         postTest:
           commands:
-            - npx mochawesome-merge@4 cypress/report/mochawesome-report/*.json > cypress/report/mochawesome.json            
+            - npx mochawesome-merge@4 ../cypress/report/mochawesome-report/*.json > ../cypress/report/mochawesome.json            
   - appRoot: app2
     frontend:
       phases:
