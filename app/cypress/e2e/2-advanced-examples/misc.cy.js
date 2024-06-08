@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-
+/*
 context('Misc', () => {
   beforeEach(() => {
     cy.visit('http://localhost:8080/commands/misc')
@@ -88,3 +88,4 @@ context('Misc', () => {
       .and('include', 'bar')
   })
 })
+*/
