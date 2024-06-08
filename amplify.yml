@@ -1,6 +1,6 @@
 version: 0.1
 applications:
-  - appRoot: app1
+  - appRoot: ./
     frontend:
       phases:
         preBuild:
@@ -49,7 +49,7 @@ applications:
         postTest:
           commands:
             - npx mochawesome-merge@4 cypress/report/mochawesome-report/*.json > cypress/report/mochawesome.json            
-  - appRoot: ./app2
+  - appRoot: ./
     frontend:
       phases:
         preBuild:
