@@ -39,7 +39,7 @@ applications:
             - pwd
             - npm install
             - npm run cy:info
-            - npm run cy:install
+            - npx run cypress install
             - npm install wait-on
             - npm install mocha mochawesome mochawesome-merge mochawesome-report-generator
             - "npm start & npx wait-on http://127.0.0.1:8080"
