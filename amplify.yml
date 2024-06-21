@@ -27,7 +27,7 @@ applications:
         preTest:
           commands:
             - npm install wait-on
-            - npm install mocha mochawesome mochawesome-merge mochawesome-report-generator
+            - npm install start-server-and-test mocha mochawesome mochawesome-merge mochawesome-report-generator
             - "npm start & npx wait-on http://127.0.0.1:8080"
         test:
           commands:
