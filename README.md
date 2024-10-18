@@ -132,3 +132,6 @@ Check out the [Contributing Guideline](/CONTRIBUTING.md).
 
 - after v1.0.4 at [cypress-example-kitchensink/releases](https://github.com/cypress-io/cypress-example-kitchensink/releases)
 - before at [CHANGELOG_OLD.md](CHANGELOG_OLD.md)
+
+
+SLI
